@@ -5,10 +5,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GlowAutomation.TestCases
 {
-    internal class TC003_DeclinedByAnchorTest : BaseTest
+    [TestClass]
+    public class TC003_DeclinedByAnchorTest : BaseTest
     {
-        [TestMethod]
-        public void Should_BePossibleTo_DeclineByAnchor()
+        public override void RunTest()
         {
             Initialize(Config.DevUrl, Config.AnchorDeclineLogin, Config.AnchorDeclinePass);
 

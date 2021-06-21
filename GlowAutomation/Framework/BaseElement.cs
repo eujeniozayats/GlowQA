@@ -1,4 +1,4 @@
-﻿
+﻿using GlowAutomation.TestCases;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
@@ -10,7 +10,6 @@ namespace GlowAutomation.Framework
         protected IWebElement Element;
         protected By Locator;
         protected string Name;
-        protected TestContext tc;
 
         protected BaseElement(By loc, string name)
         {
@@ -37,7 +36,7 @@ namespace GlowAutomation.Framework
         {
             IsClickable(Locator);
             AssertIsDisplayed();
-            AssertIsEnabled();
+            //AssertIsEnabled();
             Info("Clicking");
             Element.Click();
             IsReadyStateComplete();
@@ -55,7 +54,7 @@ namespace GlowAutomation.Framework
             }
             catch
             {
-                //AttachScreenshotOnFailure();
+                //TakeScreenshot();
             }
         }
 
@@ -67,12 +66,12 @@ namespace GlowAutomation.Framework
 
             try
             {
-                Assert.IsTrue(Element.Enabled, "Error! Element with id: " + Element.GetAttribute("id").Trim() + " should be enabled!");
+                Assert.IsFalse(Element.Enabled, "Error! Element with id: " + Element.GetAttribute("id").Trim() + " should be enabled!");
                 Info("Assert Enabled");
             }
             catch
             {
-                //AttachScreenshotOnFailure();
+                Assert.Fail();
             }
         }
 
@@ -88,23 +87,10 @@ namespace GlowAutomation.Framework
             }
             catch
             {
-                //AttachScreenshotOnFailure();
+
             }
         }
 
-        /*public void AttachScreenshotOnFailure()
-        {
-
-            if (tc.CurrentTestOutcome == UnitTestOutcome.Passed)
-                TestContext.AddResultFile(testPassedFile);
-            else
-                TestContext.AddResultFile(testFailedFile);
-
-            var filePath = $"{tc.AddResultFile() .TestDirectory}\\{TestContext.CurrentContext.Test.MethodName}.jpg";
-            ((ITakesScreenshot)Driver).GetScreenshot().SaveAsFile(filePath);
-            TestContext.AddTestAttachment(filePath);
-            Assert.Fail();
-        }*/
 
         public void SendKeys(string key)
         {

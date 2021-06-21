@@ -1,14 +1,38 @@
 ﻿
+using GlowAutomation.Framework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
 
-namespace GlowAutomation.Framework
+namespace GlowAutomation.TestCases
 {
-    //[TestClass]
+
     public abstract class BaseTest : BaseEntity
     {
-        protected override string FormatLogMsg(string message)
-        {
-            return message;
+
+            public abstract void RunTest();
+
+            [TestMethod]
+            public void xTest()
+            {
+                try
+                {
+                    RunTest();
+                }
+                catch
+                {
+                    AttachScreenShotFileToTestResult("Failure");
+                    Assert.Fail();
+                }
+            }
+
+
+
+
+
+            protected override string FormatLogMsg(string message)
+            {
+                return message;
+            }
         }
     }
-}

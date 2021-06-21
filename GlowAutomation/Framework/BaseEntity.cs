@@ -28,7 +28,59 @@ namespace GlowAutomation.Framework
             configuration.Bind(Config);
         }
 
-        protected virtual Logger Logger => Logger.Instance;
+        public TestContext TestContext { get; set; }
+
+        public void AttachScreenShotFileToTestResult(string screenShotPath)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(screenShotPath))
+                {
+                    TestContext.AddResultFile(screenShotPath);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+    
+        public void TakeScreenshot()
+
+        {
+            var testFilePath = ScreenGrab("Error");
+            AttachScreenShotFileToTestResult(testFilePath);
+            Assert.Fail();
+        }
+
+        public string ScreenGrab(string test)
+        {
+            string baseDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string screenGrabs = Path.Combine(baseDirectory, $"{DateTime.Now:yyyy-MM-dd}");
+            if (!Directory.Exists(baseDirectory))
+            {
+                Directory.CreateDirectory(baseDirectory);
+            }
+
+            if (!Directory.Exists(screenGrabs))
+            {
+                Directory.CreateDirectory(screenGrabs);
+            }
+            string filename = Path.Combine(screenGrabs, $"{test}-{DateTime.Now:yyyy-MM-dd_hh-mm-ss-tt}.png");
+            try
+            {
+                Screenshot ss = ((ITakesScreenshot)Driver).GetScreenshot();
+                ss.SaveAsFile(filename, ScreenshotImageFormat.Png);
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
+            return filename;
+        }
+
+protected virtual Logger Logger => Logger.Instance;
 
         protected virtual GoogleSheetManager GoogleSheetManager => GoogleSheetManager.Instance;
 
@@ -45,7 +97,7 @@ namespace GlowAutomation.Framework
             {
                 PageLoadStrategy = PageLoadStrategy.Normal
             };
-            chromeOptions.AddArgument("headless");
+            //chromeOptions.AddArgument("headless");
             Driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions);
             Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(60));
             Driver.Manage().Cookies.DeleteAllCookies();

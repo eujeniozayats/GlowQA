@@ -17,6 +17,7 @@ namespace GlowAutomation.PageObjects
             _spinner.WaitUntilNotVisible();
             _txbEmail.SendKeys(email);
             _txbPass.SendKeys(password);
+            _btnSbmt.AssertIsEnabled();
             _btnSbmt.Click();
         }
     }

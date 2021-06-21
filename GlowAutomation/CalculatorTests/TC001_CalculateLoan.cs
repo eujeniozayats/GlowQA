@@ -3,7 +3,7 @@ using GlowAutomation.PageObjects;
 
 namespace GlowAutomation.CalculatorTests
 {
-    public partial class TC001_CalculateLoan : BaseTest
+    /*public partial class TC001_CalculateLoan : BaseTest
     {
         //[TestCaseSource(nameof(GetData))]
         public void Should_BePossibleTo_CalculateRight(TestData data)
@@ -27,5 +27,5 @@ namespace GlowAutomation.CalculatorTests
                 data.RownNumber
                );
         }
-    }
+    }*/
 }

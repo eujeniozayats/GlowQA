@@ -4,10 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GlowAutomation.TestCases
 {
-    internal class TC002_DeclinedByAccertifyTest : BaseTest
+    [TestClass]
+    public class TC002_DeclinedByAccertifyTest : BaseTest
     {
-        [TestMethod]
-        public void Should_BePossibleTo_DeclineByAccertify()
+        
+        public override void RunTest()
         {
             Initialize(Config.DevUrl, Config.AccertifyDeclineLogin, Config.AccertifyDeclinePass);
 

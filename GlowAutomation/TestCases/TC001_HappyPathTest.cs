@@ -1,21 +1,29 @@
 ﻿using GlowAutomation.Framework;
 using GlowAutomation.PageObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using System;
 
 namespace GlowAutomation.TestCases
 {
+
     [TestClass]
     public class TC001_HappyPathTest : BaseTest
     {
-        [TestMethod]
-        public void Should_BePossibleTo_PassHappyPath()
+        
+        public override void RunTest()
         {
+           
             Initialize(Config.UatUrl, Config.AutomationLogin, Config.AutomationPass);
+            
+           
+
+            
 
             Logger.Step(1);
             var eligibilityPage = new EligibilityPage();
             eligibilityPage.GoToYourLoanPage();
+
+            
 
             /*Logger.Step(2);
             var yourLoanPage = new YourLoanPage();
@@ -39,5 +47,6 @@ namespace GlowAutomation.TestCases
             var congratulationsPage = new CongratulationsPage();
             congratulationsPage.ValidateCloseButton();*/
         }
+        
     }
 }

@@ -4,10 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GlowAutomation.TestCases
 {
-    internal class TC006_PauseApplicationTest : BaseTest
+    [TestClass]
+    public class TC006_PauseApplicationTest : BaseTest
     {
-        [TestMethod]
-        public void Should_BePossibleTo_PauseApplication()
+     
+        public override void RunTest()
         {
             Initialize(Config.DevUrl, Config.AutomationLogin, Config.AutomationPass);
 

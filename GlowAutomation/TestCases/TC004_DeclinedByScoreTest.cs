@@ -4,10 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GlowAutomation.TestCases
 {
-    internal class TC004_DeclinedByScoreTest : BaseTest
+    [TestClass]
+    public class TC004_DeclinedByScoreTest : BaseTest
     {
-        [TestMethod]
-        public void Should_BePossibleTo_DeclineByScore()
+      
+        public override void RunTest()
         {
             Initialize(Config.DevUrl, Config.AutomationLogin, Config.AutomationPass);
 

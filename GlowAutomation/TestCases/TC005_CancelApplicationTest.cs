@@ -4,10 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GlowAutomation.TestCases
 {
-    internal class TC005_CancelApplicationTest : BaseTest
+    [TestClass]
+    public class TC005_CancelApplicationTest : BaseTest
     {
         [TestMethod]
-        public void Should_BePossibleTo_CancelApplication()
+        public override void RunTest()
         {
             Initialize(Config.DevUrl, Config.AutomationLogin, Config.AutomationPass);
 

@@ -14,7 +14,6 @@ namespace GlowAutomation.PageObjects
         {
             _spinner.WaitUntilNotVisible();
             _btnPay.AssertIsEnabled();
-            Assert.Fail("ERROROROR");
             _btnPay.Click();
         }
     }

@@ -5,10 +5,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GlowAutomation.TestCases
 {
-    internal class TC007_FieldsErrorsTest : BaseTest
+    [TestClass]
+    public class TC007_FieldsErrorsTest : BaseTest
     {
-        [TestMethod]
-        public void Should_BePossibleTo_ValidateFieldsErrors()
+
+        public override void RunTest()
         {
             Initialize(Config.DevUrl, Config.AutomationLogin, Config.AutomationPass);
 
