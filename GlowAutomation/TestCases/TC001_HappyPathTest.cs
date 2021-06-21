@@ -10,7 +10,9 @@ namespace GlowAutomation.TestCases
     public class TC001_HappyPathTest : BaseTest
     {
         
-        public override void RunTest()
+        
+        [TestCategory("TC001_HappyPathTest")]
+        public override void RunTest() 
         {
            
             Initialize(Config.UatUrl, Config.AutomationLogin, Config.AutomationPass);

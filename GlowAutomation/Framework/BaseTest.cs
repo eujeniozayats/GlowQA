@@ -11,6 +11,7 @@ namespace GlowAutomation.TestCases
     {
 
             public abstract void RunTest();
+        
 
             [TestMethod]
             public void xTest()
@@ -20,12 +21,11 @@ namespace GlowAutomation.TestCases
             
                 try
                 {
-                    RunTest();
+                   RunTest();
                 }
-                catch
+                catch(Exception)
                 {
                 var testFilePath = ScreenGrab(currentClass);
-
                 AttachScreenShotFileToTestResult(testFilePath);
                     Assert.Fail();
                 }

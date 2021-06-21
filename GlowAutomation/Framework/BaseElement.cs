@@ -36,7 +36,7 @@ namespace GlowAutomation.Framework
         {
             IsClickable(Locator);
             AssertIsDisplayed();
-            //AssertIsEnabled();
+            AssertIsEnabled();
             Info("Clicking");
             Element.Click();
             IsReadyStateComplete();
@@ -66,7 +66,7 @@ namespace GlowAutomation.Framework
 
             try
             {
-                Assert.IsFalse(Element.Enabled, "Error! Element with id: " + Element.GetAttribute("id").Trim() + " should be enabled!");
+                Assert.IsTrue(Element.Enabled, "Error! Element with id: " + Element.GetAttribute("id").Trim() + " should be enabled!");
                 Info("Assert Enabled");
             }
             catch
