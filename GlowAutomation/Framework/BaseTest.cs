@@ -21,7 +21,7 @@ namespace GlowAutomation.TestCases
                 }
                 catch
                 {
-                    AttachScreenShotFileToTestResult("Failure");
+                    AttachScreenShotFileToTestResult();
                     Assert.Fail();
                 }
             }

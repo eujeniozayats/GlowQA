@@ -30,13 +30,13 @@ namespace GlowAutomation.Framework
 
         public TestContext TestContext { get; set; }
 
-        public void AttachScreenShotFileToTestResult(string screenShotPath)
+        public void AttachScreenShotFileToTestResult()
         {
             try
             {
-                if (!string.IsNullOrEmpty(screenShotPath))
+                if (!string.IsNullOrEmpty($"{TestContext.TestDir}\\{TestContext.TestName}.jpg"))
                 {
-                    TestContext.AddResultFile(screenShotPath);
+                    TestContext.AddResultFile($"{TestContext.TestDir}\\{TestContext.TestName}.jpg");
                 }
             }
             catch (Exception)
@@ -46,17 +46,10 @@ namespace GlowAutomation.Framework
 
         }
     
-        public void TakeScreenshot()
-
-        {
-            var testFilePath = ScreenGrab("Error");
-            AttachScreenShotFileToTestResult(testFilePath);
-            Assert.Fail();
-        }
 
         public string ScreenGrab(string test)
         {
-            string baseDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string baseDirectory = $"{TestContext.TestDir}\\{TestContext.TestName}.jpg";
             string screenGrabs = Path.Combine(baseDirectory, $"{DateTime.Now:yyyy-MM-dd}");
             if (!Directory.Exists(baseDirectory))
             {
