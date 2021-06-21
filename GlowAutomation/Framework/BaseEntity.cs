@@ -100,7 +100,7 @@ protected virtual Logger Logger => Logger.Instance;
             Driver.Manage().Window.Maximize();
             Driver.Navigate().GoToUrl(env);
             var platLogin = new PlatLogin();
-            platLogin.PLogin(Config.ClientLogin, Config.ClientPass);
+            platLogin.PLogin("123", Config.ClientPass);
             var catLogin = new CatLogin();
             catLogin.CatalogLogin(mobileC, passC);
             catLogin.BuyWithSamsung();
