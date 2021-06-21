@@ -15,13 +15,16 @@ namespace GlowAutomation.TestCases
             [TestMethod]
             public void xTest()
             {
+            string currentClass = this.GetType().Name;
+
+            
                 try
                 {
                     RunTest();
                 }
                 catch
                 {
-                var testFilePath = ScreenGrab("BurnUp_86_CheckIterationPathsLoadERROR");
+                var testFilePath = ScreenGrab(currentClass);
 
                 AttachScreenShotFileToTestResult(testFilePath);
                     Assert.Fail();
