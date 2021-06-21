@@ -1,12 +1,12 @@
 ﻿using GlowAutomation.Framework;
 using GlowAutomation.PageObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GlowAutomation.TestCases
 {
     internal class TC005_CancelApplicationTest : BaseTest
     {
-        [Test]
+        [TestMethod]
         public void Should_BePossibleTo_CancelApplication()
         {
             Initialize(Config.DevUrl, Config.AutomationLogin, Config.AutomationPass);

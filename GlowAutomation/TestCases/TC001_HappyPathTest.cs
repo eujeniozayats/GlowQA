@@ -1,12 +1,14 @@
 ﻿using GlowAutomation.Framework;
 using GlowAutomation.PageObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace GlowAutomation.TestCases
 {
-    internal class TC001_HappyPathTest : BaseTest
+    [TestClass]
+    public class TC001_HappyPathTest : BaseTest
     {
-        [Test]
+        [TestMethod]
         public void Should_BePossibleTo_PassHappyPath()
         {
             Initialize(Config.UatUrl, Config.AutomationLogin, Config.AutomationPass);

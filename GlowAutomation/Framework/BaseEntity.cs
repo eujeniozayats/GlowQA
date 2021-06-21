@@ -1,6 +1,6 @@
 ﻿using GlowAutomation.PageObjects;
 using Microsoft.Extensions.Configuration;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
@@ -121,13 +121,13 @@ namespace GlowAutomation.Framework
             Wait.Until(wd => wd.Title == windowTitle);
         }
 
-        [SetUp]
+        [TestInitialize]
         public void SetUp()
         {
             RunConfig();
         }
 
-        [TearDown]
+        [TestCleanup]
         public void TearDown()
         {
             Quit();

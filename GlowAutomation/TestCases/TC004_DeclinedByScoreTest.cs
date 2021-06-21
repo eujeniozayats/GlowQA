@@ -1,12 +1,12 @@
 ﻿using GlowAutomation.Framework;
 using GlowAutomation.PageObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GlowAutomation.TestCases
 {
     internal class TC004_DeclinedByScoreTest : BaseTest
     {
-        [Test]
+        [TestMethod]
         public void Should_BePossibleTo_DeclineByScore()
         {
             Initialize(Config.DevUrl, Config.AutomationLogin, Config.AutomationPass);

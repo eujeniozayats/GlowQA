@@ -1,8 +1,9 @@
-﻿using NUnit.Framework;
+﻿
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GlowAutomation.Framework
 {
-    [TestFixture]
+    //[TestClass]
     public abstract class BaseTest : BaseEntity
     {
         protected override string FormatLogMsg(string message)

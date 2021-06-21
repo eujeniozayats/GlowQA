@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
@@ -53,7 +54,7 @@ namespace GlowAutomation.Framework
             }
             catch
             {
-                AttachScreenshotOnFailure();
+                //AttachScreenshotOnFailure();
             }
         }
 
@@ -70,7 +71,7 @@ namespace GlowAutomation.Framework
             }
             catch
             {
-                AttachScreenshotOnFailure();
+                //AttachScreenshotOnFailure();
             }
         }
 
@@ -86,17 +87,17 @@ namespace GlowAutomation.Framework
             }
             catch
             {
-                AttachScreenshotOnFailure();
+                //AttachScreenshotOnFailure();
             }
         }
 
-        public void AttachScreenshotOnFailure()
+        /*public void AttachScreenshotOnFailure()
         {
             var filePath = $"{TestContext.CurrentContext.TestDirectory}\\{TestContext.CurrentContext.Test.MethodName}.jpg";
             ((ITakesScreenshot)Driver).GetScreenshot().SaveAsFile(filePath);
             TestContext.AddTestAttachment(filePath);
             Assert.Fail();
-        }
+        }*/
 
         public void SendKeys(string key)
         {

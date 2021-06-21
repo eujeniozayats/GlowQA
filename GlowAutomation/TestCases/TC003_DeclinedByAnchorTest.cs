@@ -1,12 +1,13 @@
 ﻿using GlowAutomation.Framework;
 using GlowAutomation.PageObjects;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace GlowAutomation.TestCases
 {
     internal class TC003_DeclinedByAnchorTest : BaseTest
     {
-        [Test]
+        [TestMethod]
         public void Should_BePossibleTo_DeclineByAnchor()
         {
             Initialize(Config.DevUrl, Config.AnchorDeclineLogin, Config.AnchorDeclinePass);

@@ -1,12 +1,11 @@
 ﻿using GlowAutomation.Framework;
 using GlowAutomation.PageObjects;
-using NUnit.Framework;
 
 namespace GlowAutomation.CalculatorTests
 {
     public partial class TC001_CalculateLoan : BaseTest
     {
-        [TestCaseSource(nameof(GetData))]
+        //[TestCaseSource(nameof(GetData))]
         public void Should_BePossibleTo_CalculateRight(TestData data)
         {
             InitializeStandaloneCalculator();
