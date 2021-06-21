@@ -45,7 +45,7 @@ namespace GlowAutomation.Framework
             {
                 PageLoadStrategy = PageLoadStrategy.Normal
             };
-            //chromeOptions.AddArgument("headless");
+            chromeOptions.AddArgument("headless");
             Driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions);
             Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(60));
             Driver.Manage().Cookies.DeleteAllCookies();
