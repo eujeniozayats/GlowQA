@@ -28,7 +28,7 @@ namespace GlowAutomation.TestCases
                 {
                 var testFilePath = ScreenGrab(currentClass);
                 AttachScreenShotFileToTestResult(testFilePath);
-                    //Assert.Fail();
+                    Assert.Fail();
                 }
             }
 
