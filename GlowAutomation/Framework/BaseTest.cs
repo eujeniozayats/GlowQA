@@ -10,10 +10,11 @@ namespace GlowAutomation.TestCases
     public abstract class BaseTest : BaseEntity
     {
 
-            public abstract void RunTest();
+        [TestMethod]    
+        public abstract void RunTest();
         
 
-            [TestMethod]
+            
             public void xTest()
             {
             string currentClass = this.GetType().Name;

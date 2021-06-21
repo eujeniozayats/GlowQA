@@ -37,6 +37,7 @@ namespace GlowAutomation.Framework
                 if (!string.IsNullOrEmpty(screenShotPath))
                 {
                     TestContext.AddResultFile(screenShotPath);
+                    Assert.Fail();
                 }
             }
             catch (Exception)

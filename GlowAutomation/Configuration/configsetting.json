@@ -2,7 +2,7 @@
   "DevUrl": "https://app.demo.dev.glowfinsvs.com/login",
   "UatUrl": "https://app.demo.uat.glowfinsvs.com/login",
   "CalcUatUrl": "https://fincalc.platform.uat.glowfinsvs.com/",
-  "ClientLogin": "Chris@glowgfs.com",
+  "ClientLogin": "Chris@glowgfs.coma",
   "ClientPass": "Chris@glowgfs.com",
   "AutomationLogin": "+440123456789",
   "AutomationPass": "automation",
