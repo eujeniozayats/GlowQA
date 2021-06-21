@@ -21,7 +21,9 @@ namespace GlowAutomation.TestCases
                 }
                 catch
                 {
-                    AttachScreenShotFileToTestResult();
+                var testFilePath = ScreenGrab("BurnUp_86_CheckIterationPathsLoadERROR");
+
+                AttachScreenShotFileToTestResult(testFilePath);
                     Assert.Fail();
                 }
             }

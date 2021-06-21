@@ -30,13 +30,13 @@ namespace GlowAutomation.Framework
 
         public TestContext TestContext { get; set; }
 
-        public void AttachScreenShotFileToTestResult()
+        public void AttachScreenShotFileToTestResult(string screenShotPath)
         {
             try
             {
-                if (!string.IsNullOrEmpty($"{TestContext.TestDir}\\{TestContext.TestName}.jpg"))
+                if (!string.IsNullOrEmpty(screenShotPath))
                 {
-                    TestContext.AddResultFile($"{TestContext.TestDir}\\{TestContext.TestName}.jpg");
+                    TestContext.AddResultFile(screenShotPath);
                 }
             }
             catch (Exception)
