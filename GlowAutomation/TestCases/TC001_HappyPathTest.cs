@@ -10,11 +10,15 @@ namespace GlowAutomation.TestCases
     public class TC001_HappyPathTest : BaseTest
     {
 
+        [TestMethod("TC001_HappyPathTest")]
         public override void RunTest()
         {
             string currentClass = this.GetType().Name;
 
-           
+
+            try
+            {
+
 
                 Initialize(Config.UatUrl, Config.AutomationLogin, Config.AutomationPass);
 
@@ -46,6 +50,14 @@ namespace GlowAutomation.TestCases
                 var congratulationsPage = new CongratulationsPage();
                 congratulationsPage.ValidateCloseButton();*/
             }
+            catch (Exception ex)
+            {
+                var testFilePath = ScreenGrab(currentClass);
+                AttachScreenShotFileToTestResult(testFilePath);
+                TestContext.WriteLine(ex.ToString());
+                Assert.Fail();
+            }
+        }
             
         }
     }

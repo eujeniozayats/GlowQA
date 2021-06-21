@@ -14,7 +14,7 @@ namespace GlowAutomation.TestCases
         public abstract void RunTest();
 
 
-        [TestMethod]
+        
         public void xTest()
             {
             string currentClass = this.GetType().Name;
@@ -24,12 +24,13 @@ namespace GlowAutomation.TestCases
                 {
                    RunTest();
                 }
-                catch(Exception)
+                catch(Exception ex)
                 {
                 var testFilePath = ScreenGrab(currentClass);
                 AttachScreenShotFileToTestResult(testFilePath);
-                    Assert.Fail();
-                }
+                TestContext.WriteLine(ex.ToString());
+                Assert.Fail();
+            }
             }
 
 
