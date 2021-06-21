@@ -17,7 +17,7 @@ namespace GlowAutomation.TestCases
             var eligibilityPage = new EligibilityPage();
             eligibilityPage.GoToYourLoanPage();
 
-            Logger.Step(2);
+            /*Logger.Step(2);
             var yourLoanPage = new YourLoanPage();
             yourLoanPage.GoToYourDetailsPage();
 
@@ -37,7 +37,7 @@ namespace GlowAutomation.TestCases
 
             Logger.Step(5);
             var congratulationsPage = new CongratulationsPage();
-            congratulationsPage.ValidateCloseButton();
+            congratulationsPage.ValidateCloseButton();*/
         }
     }
 }

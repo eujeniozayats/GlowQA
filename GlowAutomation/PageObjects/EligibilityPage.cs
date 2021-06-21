@@ -1,5 +1,6 @@
 ﻿using GlowAutomation.Framework;
 using GlowAutomation.Framework.Elements;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 
 namespace GlowAutomation.PageObjects
@@ -13,6 +14,7 @@ namespace GlowAutomation.PageObjects
         {
             _spinner.WaitUntilNotVisible();
             _btnPay.AssertIsEnabled();
+            Assert.Fail("ERROROROR");
             _btnPay.Click();
         }
     }

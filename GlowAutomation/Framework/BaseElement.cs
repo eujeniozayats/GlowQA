@@ -10,6 +10,7 @@ namespace GlowAutomation.Framework
         protected IWebElement Element;
         protected By Locator;
         protected string Name;
+        protected TestContext tc;
 
         protected BaseElement(By loc, string name)
         {
@@ -93,7 +94,13 @@ namespace GlowAutomation.Framework
 
         /*public void AttachScreenshotOnFailure()
         {
-            var filePath = $"{TestContext.CurrentContext.TestDirectory}\\{TestContext.CurrentContext.Test.MethodName}.jpg";
+
+            if (tc.CurrentTestOutcome == UnitTestOutcome.Passed)
+                TestContext.AddResultFile(testPassedFile);
+            else
+                TestContext.AddResultFile(testFailedFile);
+
+            var filePath = $"{tc.AddResultFile() .TestDirectory}\\{TestContext.CurrentContext.Test.MethodName}.jpg";
             ((ITakesScreenshot)Driver).GetScreenshot().SaveAsFile(filePath);
             TestContext.AddTestAttachment(filePath);
             Assert.Fail();
